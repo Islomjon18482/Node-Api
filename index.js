@@ -6,6 +6,7 @@ const api = express();
 api.use(express.json());
 api.use(express.urlencoded({extended: false}))
 
+const PORT = 8080;
 
 api.get("/data", async (req, res) => {
   try {
@@ -72,5 +73,5 @@ mongoose
   )
   .then(() => {
     console.log("conected");
-    api.listen(PORT, () => console.log(`https://node-api-4z79.onrender.com`));
+    api.listen(PORT, () => console.log(`https://localhost:${PORT}`));
   });
